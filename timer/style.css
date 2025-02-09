@@ -1,0 +1,393 @@
+:root {
+  --dark-text: rgba(255, 255, 255, 0.9);
+  --light-text: rgba(0, 0, 0, 0.9);
+  --trans-white: rgba(255, 255, 255, 0.1);
+  --trans5-white: rgba(255, 255, 255, 0.3);
+  /* 使い方 background: var(--dark-text); */
+  --box-shadow-value: 0px 0px 1px rgba(0, 0, 0, 1);
+  --box-shadow-sidebar: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  --boder-value: solid 1px rgba(0, 0, 0, 0.2);
+  --gray-ori: rgba(240,240,240,1);
+}
+
+html{
+  font-size: 24px; /* 基本フォントサイズ */
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  color: var(--light-text);
+  height: 100vh;
+  margin: 0;
+  font-weight: 300;
+  flex: none;
+}
+
+.jump{
+  position: fixed;
+  bottom:8px;
+  left:8px;
+  display: flex;
+  gap:10px;
+  font-size: 0.8rem;
+}
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+時間追加ボタン
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+.adjust-buttons{
+  display: flex;
+  justify-content: center;
+  gap:20px;
+}
+
+  
+  .adjust-btn{
+    width:200px;
+    height: 80px;
+    background: rgb(228, 228, 228);
+    text-align: center;
+  }
+  .adjust-select-buttons{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left:50%;
+    transform: translate(-50%);
+    bottom: 0;
+  }
+  .adjust-select-btn{
+    width: 100px;
+    height:40px;
+    color:var(--light-text);
+    font-size: 0.8rem;
+    
+  }
+  
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+ロゴ、タイトル
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+.logo {
+  width: 40px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+ストップウォッチ
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+
+
+.container {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+
+}
+
+.stopwatch-display {
+  font-weight: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  letter-spacing: 0.5rem;
+}
+
+.time {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+
+.time-box {
+  display: flex;
+  font-size: 2.5rem;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.plus-unit{
+  display:inline-block;
+  margin:0 10px;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+/* 区切り戦＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+#divider {
+  font-size: 2.5rem;
+  transform: translate(0, -35px);
+}
+
+/* 単位＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+.unit {
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  opacity: 0.5;
+  font-size: 0.9rem;
+  transform: translate(-0.3rem);
+}
+
+/* リセット時のアニメーション＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+#stopwatch-display.move {
+  position: relative;
+  animation: moveLeft 0.2s forwards;
+}
+
+@keyframes moveLeft {
+  0% {
+    left: 0;
+  }
+
+  50% {
+    left: -40px;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+スタートボタン
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+.start-btn-area {
+  width:200px;
+  height: 200px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#start-stop-btn,.adjust-btn {
+  width: 180px;
+  height: 180px;
+  transition: all 0.15s;
+  background-color: var(--trans-white);
+  border-radius: 100px;
+  font-size: 1rem;
+  letter-spacing: 0.5rem;
+  box-shadow: var(--box-shadow-value);
+}
+
+#start-stop-btn-text{
+  transform: translate(0.2rem, 0);
+  text-align: center;
+}
+.adjust-btn-text {
+  transform: translate(0.15rem, 0);
+}
+.adjust-btn-text {
+  font-size: 0.9rem;
+  letter-spacing: 0.2rem;
+  
+}
+
+#start-stop-btn:hover,.adjust-btn:hover{
+  width: 190px;
+  height: 190px;
+  background-color: var(--trans-white);
+
+}
+
+#start-stop-btn:active,#start-stop-btn.active,.adjust-btn:active,.adjust-btn.active {
+  width: 200px;
+  height: 200px;
+}
+
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+リセットボタン
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+.delete-btn {
+  font-size: 1rem;
+  visibility: hidden;
+  display: inline-block;
+  text-align: center;
+  width: 100px;
+  height: 60px;
+  letter-spacing: 0.2rem;
+  margin-top: 50px;
+  transform: translate(0.2rem,0);
+  font-weight: 200;
+}
+@media (max-width: 600px) {
+  .time {
+    flex-direction: column;
+    gap:40px;
+  }
+  .container{
+    gap:100px;
+  }
+  .time-box{
+    gap:10px;
+  }
+  .delete-btn{
+    transform: translate(-0.3rem,0);
+  }
+  #divider{
+    display: none;
+  }
+}
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+ダークモード
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+
+.visible {
+  visibility: visible;
+}
+
+body.dark-mode {
+  color: var(--dark-text);
+}
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+コントロール
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+/* 表示非表示ボタン ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+.sidebar-show-btn,
+.sidebar-close-btn {
+  font-size: 1rem;
+  margin-top: 40px;
+  display: inline-block;
+  width:1rem;
+}
+
+.sidebar-show-btn {
+  position: fixed;
+  right: 30px;
+  top: 0;
+  transition: 1s all;
+
+}
+
+.sidebar-close-btn {
+  transition: 1s all;
+}
+
+#sidebar-show-btn.disable {
+  display: none;
+}
+
+/* コントロールレイアウト ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+.sidebar {
+  top: 0;
+  right: -250px;
+  /* 非表示状態 */
+  transition: right 1s ease;
+  /* スムーズなアニメーション */
+  font-size: 0.8rem;
+  padding: 0 30px 40px 30px;
+  gap: 40px;
+  width: 250px;
+  position: fixed;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between;
+  align-items: flex-start;
+  background: var(--trans-white);
+  box-shadow: var(--box-shadow-sidebar);
+  height: 100vh;
+}
+
+.sidebar-top {
+  width: 100%;
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+}
+
+#sidebar.active {
+  right: 0;
+}
+
+.control-section {
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  letter-spacing: 0.1rem;
+  opacity: 0.6;
+  font-weight: 300;
+}
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+コントロールボタン
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+/* フォントサイズ ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+input[type="range"] {
+  width: 150px;
+}
+
+input[type="color"] {
+  width: 50px;
+  height: 30px;
+}
+
+#font-size-slider {
+  width: 100%;
+  background: var(--trans5-white);
+  height: 4px;
+  border-radius: 100px;
+  margin-top: 10px;
+  border:var(--boder-value);
+}
+
+#font-size-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: var(--gray-ori);
+
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  border:var(--boder-value);
+  font-size: 16px;
+  color: var(--light-text);
+
+}
+
+/* 色選択  ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#stop-bg-color,
+#count-bg-color {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 40px;
+  border-radius: 1000px;
+  padding: 0;
+  border: none;
+}
+
+
+#stop-bg-color::-webkit-color-swatch,
+#count-bg-color::-webkit-color-swatch {
+  border-radius: 100px;
+  border: none;
+  /* 内部の枠線を除去 */
+  border:var(--boder-value);
+
+}
+
+.color-picker::-webkit-color-swatch-wrapper {
+  padding: 0;
+  /* 余白を除去 */
+}
+
+/* ショートカット  ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+.shortcut {
+  margin-top: 10px;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  opacity: 0.7;
+}

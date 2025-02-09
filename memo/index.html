@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mm Stopwatch</title>
+  <meta name="description"
+    content="This is the most minimalist and fun to design stopwatch web app. | 最もミニマルでデザインを楽しめるストップウォッチウェブアプリです。">
+  <link rel="icon" href="fabi.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  メモ
+  ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ -->
+  <div class="jump">
+    <a href="../stopwatch/index.html">Stopwatch</a>
+    <span>/</span>
+    <a href="../timer/index.html">Timer</a>
+  </div>
+
+  <div class="container">
+    <textarea id="memo-text" placeholder="Write your memo here..."></textarea>
+  </div>
+  <!-- /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  サイドバー
+  ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ -->
+  <button class="sidebar-show-btn" id="sidebar-show-btn">＜</button>
+  <div class="sidebar" id="sidebar">
+
+    <div class="sidebar-top">
+      <!--フォントサイズ ============================= -->
+      <button class="sidebar-close-btn" id="sidebar-close-btn">＞</button>
+      <div class="control-section">
+        <label for="font-size-slider">Font Size</label>
+        <input type="range" id="font-size-slider" min="1" max="5" value="1.5">
+      </div>
+      <!--背景色（デフォルト指定） ============================= -->
+      <div class="control-section">
+        <label for="stop-bg-color">BG color </label>
+        <input type="color" id="stop-bg-color" value="#cccccf">
+      </div>
+    </div>
+    <div class="sidebar-bottom">
+      <!--タイトル、ロゴ、クレジット ============================= -->
+      <div class="title-section">
+        <img class="logo" src="fabi.png" alt="">
+        <h1 class="titile">Mm Memo</h1>
+      </div>
+      <div class="control-section">
+        <a href="https://x.com/mono4log" target="_blank">by Yusui Hoshino</a>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

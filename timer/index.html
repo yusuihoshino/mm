@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mm Stopwatch</title>
+  <meta name="description"
+    content="This is the most minimalist and fun to design stopwatch web app. | 最もミニマルでデザインを楽しめるストップウォッチウェブアプリです。">
+  <link rel="icon" href="fabi.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="jump">
+    <a href="../stopwatch/index.html">Stopwatch</a>
+    <span>/</span>
+    <a href="../memo/index.html">Memo</a>
+  </div>
+
+  <div class="container">
+    <!-- /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+    ディスプレイ 
+    ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ -->
+    <div class="stopwatch-display" id="stopwatch-display">
+      <div class="time">
+        <div class="time-box">
+          <div id="timeH">00</div>
+          <div class="unit">hour</div>
+        </div>
+        <div id="divider">:</div>
+        <div class="time-box">
+          <div id="timeM">00</div>
+          <div class="unit">min</div>
+        </div>
+        <div id="divider">:</div>
+        <div class="time-box">
+          <div id="timeS">00</div>
+          <div class="unit">sec</div>
+        </div>
+        <div id="divider">:</div>
+        <div class="time-box">
+          <div id="timeT">00</div>
+          <div class="unit">10sec</div>
+        </div>
+      </div>
+      
+      <button id="delete-btn" class="delete-btn">reset</button>
+    </div>
+    <div class="adjust-buttons">
+      <div class="start-btn-area">
+        <button class="adjust-btn" data-time="3600000">
+          <div class="adjust-btn-text" data-time="3600000">+<span class="plus-unit">1</span>h</div>
+        </button>
+      </div>
+
+      <div class="start-btn-area">
+        <button class="adjust-btn" data-time="600000">
+          <div class="adjust-btn-text" data-time="600000">+<span class="plus-unit">10</span>min</div>
+        </button>
+      </div>
+
+      <div class="start-btn-area">
+        <button class="adjust-btn" data-time="60000">
+          <div class="adjust-btn-text" data-time="60000">+<span class="plus-unit">1</span>min</div>
+        </button>
+      </div>
+      <div class="start-btn-area">
+        <button id="start-stop-btn" class="start-stop-btn">
+          <div id="start-stop-btn-text">START</div>
+        </button>
+      </div>
+    </div>
+    <!-- /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+    START、STOPボタン 
+    ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ -->
+    
+    
+   
+  </div>
+  <div class="adjust-select-buttons">
+    <button class="adjust-select-btn" data-time="300000">5min</button>
+    <button class="adjust-select-btn" data-time="600000">10min</button>
+    <button class="adjust-select-btn" data-time="900000">15min</button>
+    <button class="adjust-select-btn" data-time="1200000">20min</button>
+    <button class="adjust-select-btn" data-time="1500000">25min</button>
+  </div>
+  <!-- /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  サイドバー
+  ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ -->
+  <!-- ここを消すとサイドバーが現れなくなる -->
+  <button class="sidebar-show-btn" id="sidebar-show-btn">＜</button>
+  <!-- ここを消すとサイドバーが合われなくなる -->
+  <div class="sidebar" id="sidebar">
+
+    <div class="sidebar-top">
+      <!--フォントサイズ ============================= -->
+      <button class="sidebar-close-btn" id="sidebar-close-btn">＞</button>
+      <div class="control-section">
+        <label for="font-size-slider">Font Size</label>
+        <input type="range" id="font-size-slider" min="2" max="10" value="2.5">
+      </div>
+      <!--背景色（デフォルト指定） ============================= -->
+      <div class="control-section">
+        <label for="stop-bg-color">BG when stopped </label>
+        <input type="color" id="stop-bg-color" value="#cccccf">
+      </div>
+      <div class="control-section">
+        <label for="count-bg-color">BG when counting</label>
+        <input type="color" id="count-bg-color" value="#f0f0f0">
+      </div>
+      <!--ショートカット ============================= -->
+      <div class="control-section">
+        <label for="count-bg-color">Shortcuts</label>
+        <div class="shortcut">Space, delete, S, J, K, L
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-bottom">
+      <!--タイトル、ロゴ、クレジット ============================= -->
+      <div class="title-section">
+        <img class="logo" src="fabi.png" alt="">
+        <h1 class="titile">Mm Timer</h1>
+      </div>
+      <div class="control-section">
+        <a href="https://x.com/mono4log" target="_blank">by Yusui Hoshino</a>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
