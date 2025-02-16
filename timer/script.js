@@ -22,11 +22,11 @@ const stopBgColorPicker = document.getElementById("stop-bg-color");
 const countBgColorPicker = document.getElementById("count-bg-color");
 
 // 音声ファイル
-const start_audio = new Audio("start.wav");
-const stop_audio = new Audio("stop.wav");
-const delete_audio = new Audio("delete.wav");
-const swipe_audio = new Audio("swipe.wav");
-const tap_audio = new Audio("tap.wav");
+const start_audio = new Audio("../sound/start.wav");
+const stop_audio = new Audio("../sound/stop.wav");
+const delete_audio = new Audio("../sound/delete.wav");
+const swipe_audio = new Audio("../sound/swipe.wav");
+const tap_audio = new Audio("../sound/tap.wav");
 
 let running = false;
 let elapsedTime = 0;
