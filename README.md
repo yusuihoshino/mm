@@ -1,5 +1,11 @@
 # Minclu applications
-- [https://yusuihoshino.github.io/minc/stopwatch](https://yusuihoshino.github.io/minc/stopwatch)
-- [https://yusuihoshino.github.io/minc/timer](https://yusuihoshino.github.io/minc/timer)
-- [https://yusuihoshino.github.io/minc/memo](https://yusuihoshino.github.io/minc/memo)
+
+- Clock
+  - [https://yusuihoshino.github.io/mm/clock](https://yusuihoshino.github.io/mm/clock)
+- Stopwatch
+  - [https://yusuihoshino.github.io/mm/stopwatch](https://yusuihoshino.github.io/mm/stopwatch)
+- Timer
+  - [https://yusuihoshino.github.io/mm/timer](https://yusuihoshino.github.io/mm/timer)
+- Memo
+  - [https://yusuihoshino.github.io/mm/memo](https://yusuihoshino.github.io/mm/memo)
 
