@@ -23,17 +23,27 @@ body {
   flex: none;
 }
 
-
-
 .jump{
+  display: flex;
+  font-size: 0.5rem;
+  flex-direction: column;
+  gap: 2px;
   position: fixed;
   bottom:8px;
   left:8px;
-  display: flex;
-  gap:10px;
   font-size: 0.8rem;
 }
-
+.jump *{
+  transition: all 0.4s;
+  opacity: 0.5;
+}
+.jump *:hover{
+  transform: translate(8px);
+}
+.link-bold{
+  font-weight: 400;
+  opacity: 1;
+}
 
 
 .container {

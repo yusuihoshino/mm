@@ -125,6 +125,7 @@ let interval = null; // カウントダウン用のインターバルID
       clearInterval(interval);
       running = false;
       startStopBtn_text.textContent = "START";
+      document.body.style.backgroundColor = stopBgColorPicker.value; 
       playAudio(start_audio);
 
     } else {

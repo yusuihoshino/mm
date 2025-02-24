@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mm Stopwatch</title>
+  <title>Mm Clock</title>
   <meta name="description"
     content="This is the most minimalist and fun to design stopwatch web app. | 最もミニマルでデザインを楽しめるストップウォッチウェブアプリです。">
   <link rel="icon" href="../image/fabi.png" type="image/x-icon">
@@ -17,8 +17,8 @@
 
 <body>
   <div class="jump">
-    <a href="../clock/index.html">Clock</a>
-    <a class="link-bold" href="../timer/index.html">Timer</a>
+    <a class="link-bold" href="../clock/index.html">Clock</a>
+    <a href="../timer/index.html">Timer</a>
     <a href="../stopwatch/index.html">Stopwatch</a>
     <a href="../memo/index.html">Memo</a>
   </div>
@@ -49,75 +49,32 @@
           <div class="unit">10sec</div>
         </div>
       </div>
-      
-      <button id="delete-btn" class="delete-btn">reset</button>
-    </div>
-    <div class="adjust-buttons">
-      <div class="start-btn-area">
-        <button class="adjust-btn" data-time="3600000">
-          <div class="adjust-btn-text" data-time="3600000">+<span class="plus-unit">1</span>h</div>
-        </button>
-      </div>
-
-      <div class="start-btn-area">
-        <button class="adjust-btn" data-time="600000">
-          <div class="adjust-btn-text" data-time="600000">+<span class="plus-unit">10</span>min</div>
-        </button>
-      </div>
-
-      <div class="start-btn-area">
-        <button class="adjust-btn" data-time="60000">
-          <div class="adjust-btn-text" data-time="60000">+<span class="plus-unit">1</span>min</div>
-        </button>
-      </div>
-      <div class="start-btn-area">
-        <button id="start-stop-btn" class="start-stop-btn">
-          <div id="start-stop-btn-text">START</div>
-        </button>
-      </div>
     </div>
     <!-- /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
     START、STOPボタン 
     ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ -->
-    
-    
-   
-  </div>
-  <div class="adjust-select-buttons">
-    <button class="adjust-select-btn" data-time="300000">5min</button>
-    <button class="adjust-select-btn" data-time="600000">10min</button>
-    <button class="adjust-select-btn" data-time="900000">15min</button>
-    <button class="adjust-select-btn" data-time="1200000">20min</button>
-    <button class="adjust-select-btn" data-time="1500000">25min</button>
   </div>
   <!-- /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
   サイドバー
   ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ -->
-  <!-- ここを消すとサイドバーが現れなくなる -->
   <button class="sidebar-show-btn" id="sidebar-show-btn">＜</button>
-  <!-- ここを消すとサイドバーが合われなくなる -->
   <div class="sidebar" id="sidebar">
-
     <div class="sidebar-top">
-      <!--フォントサイズ ============================= -->
       <button class="sidebar-close-btn" id="sidebar-close-btn">＞</button>
+
       <div class="control-section">
         <label for="font-size-slider">Font Size</label>
         <input type="range" id="font-size-slider" min="2" max="10" value="2.5">
       </div>
       <!--背景色（デフォルト指定） ============================= -->
       <div class="control-section">
-        <label for="stop-bg-color">BG when stopped </label>
+        <label for="stop-bg-color">BG</label>
         <input type="color" id="stop-bg-color" value="#cccccf">
-      </div>
-      <div class="control-section">
-        <label for="count-bg-color">BG when counting</label>
-        <input type="color" id="count-bg-color" value="#f0f0f0">
       </div>
       <!--ショートカット ============================= -->
       <div class="control-section">
         <label for="count-bg-color">Shortcuts</label>
-        <div class="shortcut">Space, delete, S, J, K, L
+        <div class="shortcut">S
         </div>
       </div>
     </div>
@@ -125,7 +82,7 @@
       <!--タイトル、ロゴ、クレジット ============================= -->
       <div class="title-section">
         <img class="logo" src="../image/fabi.png" alt="">
-        <h1 class="titile">Mm Timer</h1>
+        <h1 class="titile">Mm Clock</h1>
       </div>
       <div class="control-section">
         <a href="https://x.com/mono4log" target="_blank">by Yusui Hoshino</a>
